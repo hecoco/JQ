@@ -12,7 +12,7 @@ window.dom = {
     before(node, node2) {//在节点前面增加兄弟节点
         node.parentNode.insertBefore(node2, node);
     },
-    append(parent, node) {
+    append(parent, node) {//新增子节点
         parent.appendChild(node);
     },
     wrap(node, parent) {//新建父节点
@@ -48,7 +48,7 @@ window.dom = {
         return arr;
     },
 
-    attr(node, name, value) {//重载
+    attr(node, name, value) {//重载  读写属性
         if (arguments.length === 3) {
             node.setAttribute(name, value)
         } else if (arguments.length === 2) {
@@ -56,7 +56,7 @@ window.dom = {
             return node.getAttribute;
         }
     },
-    text(node, string) {
+    text(node, string) {//读写文本
         if (arguments.length === 2) {
             'innerText' in node ? node.innerText = string : node.textContent = string;
         } else if (arguments.length === 1) {
@@ -91,7 +91,7 @@ window.dom = {
         remove(node, className) {
             node.classList.remove(className)
         },
-        has(node, className) {
+        has(node, className) {//判断是否存在
             return node.classList.contains(className)
         }
     },
@@ -129,7 +129,7 @@ window.dom = {
         }
         return x;
     },
-    each(nodeList, fn) {
+    each(nodeList, fn) {//遍历所有节点
         for (let i = 0; i < nodeList.length; i++) {
             fn.call(null, nodeList[i])
         }
