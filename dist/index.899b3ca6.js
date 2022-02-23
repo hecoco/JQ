@@ -94,7 +94,7 @@ window.dom = {
         return node.children;
     },
     siblings (node) {
-        return Array.from(node.parent.children).filter((n)=>n !== node
+        return Array.from(node.parentNode.children).filter((n)=>n !== node
         );
     },
     next (node) {

@@ -113,7 +113,7 @@ window.dom = {
         return node.children
     },
     siblings(node) {//获取兄弟节点
-        return Array.from(node.parent.children).filter(n => n !== node)
+        return Array.from(node.parentNode.children).filter(n => n !== node)
     },
     next(node) {//获取弟弟
         let x = node.nextSibling

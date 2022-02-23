@@ -1,5 +1,11 @@
-let div = dom.create('<div>2</div>');
-let div1 = document.getElementById('div1');
-console.log(dom.find('.a', div1)[0]);
+const div = dom.find('#test>.red')[0] // 获取对应的元素
+;
+dom.style(div, 'color', 'red') // 设置 div.style.color
+;
+const divList = dom.find('.red') // 获取多个 div.red 元素
+;
+dom.each(divList, (n)=>console.log(n)
+) // 遍历 divList 里的所有元素
+;
 
 //# sourceMappingURL=index.ed93b0c6.js.map
